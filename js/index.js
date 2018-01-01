@@ -134,14 +134,18 @@
         value.onmouseover=function(){
             for(let i=0;i<title.length;i++){
                 tit[i].classList.remove("active");
+                title[i].classList.remove("active");
             }
             tit[index].classList.add("active");
+            title[index].classList.add("active");
         }
         value.onmouseout=function(){
             for(let i=0;i<title.length;i++){
                 tit[i].classList.remove("active");
+                title[i].classList.remove("active");
             }
             tit[index].classList.add("active");
+            title[index].classList.add("active");
         }
     })
 }

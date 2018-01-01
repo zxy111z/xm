@@ -688,16 +688,17 @@
 	float: right;
 }
 .second-header-right-text{
-	width: 31px;
 	height:18px;
 	font-size: 15px;
 	color:#333333 ;
 	text-align: center;
-	line-height: 60px;
 	margin-right:32px;
+	line-height: 10px;
+	float: left;
+	margin-top: 20px;
 	cursor:pointer;
 }
-.second-header-right-text:hover{
+.second-header .second-header-right .active{
 	color: #FF6700;
 	border-bottom: 2px solid #ff6700;
 }
@@ -1016,7 +1017,6 @@
 .tuijian-list{
 	width: 131px;
 	height: 149px;
-	background: blue;
 	display: block;
 	margin: 0 auto;
 }
@@ -1362,17 +1362,17 @@
     cursor: pointer;
 }
 .iconfont8{
-
 	font-family: "iconfont";
     font-style: normal;
-    font-size: 10px;
+    font-size: 10px!important;
     vertical-align: 1px;
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     background: #b0b0b0;
     border-radius: 50%;
-    line-height: 12px;
+    line-height: 20px;
     color: #fff;
+	text-align: center;
 }
 /* .iconfont:hover{
 	background: #ff6700;
