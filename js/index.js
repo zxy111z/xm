@@ -104,4 +104,143 @@
     starContainer.onmouseout=function(){
         t=setInterval(starfn,5000);
     }
+
+}
+
+{
+    // 侧导航
+    let xuan=document.querySelectorAll(".aside>li");
+    let ka=document.querySelectorAll('.banner .view');
+    xuan.forEach(function(value,index){
+        value.onmousemove=function(){
+            for(let i=0;i<xuan.length;i++){
+                ka[i].classList.remove('xianshi');
+            }
+            ka[index].classList.add("xianshi");
+        }
+        value.onmouseout=function(){
+            for(let i=0;i<xuan.length;i++){
+                ka[i].classList.remove('xianshi');
+            }
+        }
+    })
+}
+
+{
+    // 家电选项卡
+    let title=document.querySelectorAll(".second-header-right .second-header-right-text");
+    let tit=document.querySelectorAll(".center-right");
+    title.forEach(function(value,index){
+        value.onmouseover=function(){
+            for(let i=0;i<title.length;i++){
+                tit[i].classList.remove("active");
+            }
+            tit[index].classList.add("active");
+        }
+        value.onmouseout=function(){
+            for(let i=0;i<title.length;i++){
+                tit[i].classList.remove("active");
+            }
+            tit[index].classList.add("active");
+        }
+    })
+}
+
+{
+    // 为你推荐
+    let left=document.querySelector(".anjiankuang-zuo");
+    let right=document.querySelector(".anjiankuang-you");
+    let inner=document.querySelector(".center-right2");
+    //console.log(inner);
+    let starContainer=document.querySelector(".dakuang2");
+    left.onclick=function(){
+        this.classList.remove("active");
+        right.classList.add("active");
+        inner.style.transform="translateX(0)";
+    };
+    right.onclick=function(){
+        this.classList.remove("active");
+        left.classList.add("active");
+        inner.style.transform="translateX(-1226px)";
+    };
+    let n=1;
+    function starfn(){
+        n++;
+        if(n%2===0){
+            right.onclick();
+        }else {
+            left.onclick();
+        }
+    }
+    let t=setInterval(starfn,5000);
+    starContainer.onmouseover=function(){
+        clearInterval(t);
+    }
+    starContainer.onmouseout=function(){
+        t=setInterval(starfn,5000);
+    }
+
+}
+
+{
+    // 内容开始
+    function movb(){
+        noww++
+        if(noww>=tiall.length-1){
+            noww=tiall.length-1;
+        }
+        animate(tuboxs,{left:-width1*noww},500)
+    }
+
+    function lun (parents){
+        let tushu=parents.querySelector('.tushu');
+        let width2=parseInt(getComputedStyle(tushu,null).width);
+        let tusu=tushu.firstElementChild;
+        let lefttwo=parents.querySelector('.neiron-jiantou');
+        let righttwo=parents.querySelector('.neiron-jiantou1');
+        let suall=parents.querySelectorAll('.tusu .shum');
+        let diand=parents.querySelectorAll('.neiron-dian .neiron-dian2')
+        let no=0;
+        lefttwo.onclick=movb;
+        function movd(){
+            no++
+            if(no>=suall.length-1){
+                no=suall.length-1;
+            }
+            animate(tusu,{left:-width2*no},500)
+            for(let n=0;n<diand.length;n++){
+                diand[n].classList.remove('neiron-dian1');
+            }
+            diand[no].classList.add('neiron-dian1');
+        }
+        righttwo.onclick=movd;
+        lefttwo.onclick=function(){
+            if(no==0){
+                return;
+            }
+            no--;
+            if(no<0){
+                no=0
+            }
+            animate(tusu,{left:-width2*no},500)
+            for(let n=0;n<diand.length;n++){
+                diand[n].classList.remove('neiron-dian1');
+            }
+            diand[no].classList.add('neiron-dian1');
+        }
+        diand.forEach(function(value,index){
+            value.onclick=function(){
+                for(let n=0;n<diand.length;n++){
+                    diand[n].classList.remove('neiron-dian1');
+                }
+                diand[index].classList.add('neiron-dian1');
+                animate(tusu,{left:-width2*index},500);
+            }
+
+        })
+    }
+    let neiron=document.querySelectorAll('.neiron-tu .neiron-left')
+    neiron.forEach(function(value,index){
+        lun(value);
+    })
 }

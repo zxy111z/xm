@@ -1,9 +1,3 @@
-
-/* * @Author: Administrator
-* @Date:   2017-11-28 13:57:28
-* @Last Modified by:   Administrator
-* @Last Modified time: 2017-12-14 11:49:03
-*/ 
 @import url(base.css);
 /* @import url(base.css);作用是把一个css文件引入另一个css文件中 */
 /* header neikuan header-left header-right 颜色都一样 */
@@ -16,11 +10,11 @@
 /* 登录栏开始 */
 @font-face {
   font-family: 'iconfont';  /* project id 494727 */
-  src: url('http://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.eot');
-  src: url('http://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.eot');
+  src: url('https://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_494727_dxrfgxt2h0uxflxr.svg#iconfont') format('svg');
 }
 .header{
 	width: 100%;
@@ -250,7 +244,63 @@
 	width: 100%;
 	height: 100%;
 }
-.aside{
+.view{
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 233px;
+	height: 460px;
+	z-index: 999;
+	display: none;
+	animation: view .1s ease;
+}
+/* @keyframes view{
+	from {
+		width: 0;
+	}
+	to{
+
+	}
+} */
+.view ul{
+	float: left;
+	width: 248px;
+}
+.view ul li{
+	position: relative;
+	float: left;
+	width: 228px;
+	height: 40px;
+	padding: 10px 0 18px 20px;
+}
+.view ul li .imga img{
+	float: left;
+}
+.view ul li .imga span{
+	color: #333;
+	float: left;
+}
+.xianshi{
+	display: block;
+}
+.banner .aside .view ul li:hover{
+	background: none;
+}
+.banner>ul>li .btn-buy{
+	position: absolute;
+	right: 20px;
+	top: 18px;
+	width: 58px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border: 1px solid #ff6700;
+	background: #fff;
+	color: #ff6700;
+	font-size: 12px;
+}
+.banner .aside{
 	width: 236px;
 	height: 100%;
 	background:rgba(0,0,0,0.6);
@@ -259,25 +309,26 @@
 	top: 0;
 	z-index: 999;
 }
-.aside li{
+.banner .aside li{
 	width: 234px;
 	height: 42px;
 	cursor: pointer;
 }
-.aside li:hover{
+.banner .aside li:hover{
 	background: #FF6700;
 }
-.aside li:first-child{
+.banner .aside li:first-child{
 	margin-top: 25px;
 }
-.aside-left{
+.banner .aside-left{
 	line-height: 40px;
 	font-size: 12px;
 	margin-left: 37px;
 	color: #fff;
 	float: left;
 	
-}@font-face {
+}
+@font-face {
   font-family: 'iconfont';  /* project id 494727 */
   src: url('http://at.alicdn.com/t/font_494727_mo0su53oiw45cdi.eot');
   src: url('http://at.alicdn.com/t/font_494727_mo0su53oiw45cdi.eot?#iefix') format('embedded-opentype'),
@@ -307,8 +358,8 @@
 	width: 6px;
 	height: 6px;
 	float: left;
-	border: 2px solid #aaa;
-	background: #ccc;
+	border: 2px solid #ccc;
+	background: #eee;
 	border-radius: 50%;
 	margin-right: 10px;
 	cursor: pointer;
@@ -328,7 +379,7 @@
 	margin-top:auto;
 	margin-bottom:auto;
 	left: 234px;
-	z-index: 999;
+	z-index: 99;
 	background: url("../img/icon-slides.png") no-repeat -84px 50%;
 }
 .banner-right{
@@ -340,7 +391,7 @@
 	margin-top:auto;
 	margin-bottom:auto;
 	right: 0;
-	z-index: 999;
+	z-index: 99;
 	background: url("../img/icon-slides.png") no-repeat -125px 50%;
 }
 .banner-left:hover{
@@ -582,12 +633,12 @@
 	line-height: 22px;
 	font-weight: bolder;
 }
-.danping-top-right .active{
+.danping-top-right .active ,.anjiankuang .active{
 	color: #B5B5B6;
 	cursor: pointer;
 	transition: color .5s;
 }
-.danping-top-right .active:hover{
+.danping-top-right .active:hover ,.anjiankuang .active:hover{
 	color: orangered;
 }
 /* 单品结束 */
@@ -666,11 +717,15 @@
 	background: #F5F5F5;
 	padding-bottom: 10px;
 	margin: 0 auto;
+	position: relative;
 }
 .center-left{
 	width: 235px;
 	height: 614px;
 	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 .center-left:hover{
 	box-shadow: 4px 0px 999px 4px rgba(0, 0, 0, 0.1);
@@ -686,6 +741,13 @@
 	height: 615px;
 	background: #F5F5F5;
 	float: right;
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.active{
+	display: block;
 }
 .center-right-list{
 	width: 234px;
@@ -874,10 +936,10 @@
 }
 /* 为你推荐部分 */
 .center-right2{
-	width: 1229px;
+	width: 3000px;
 	height: 295px;
 	background: #F5F5F5;
-	float: right;
+	transition: all 1s;
 }
 .center-right2-list{
 	width: 234px;
@@ -918,13 +980,16 @@
 	background: #F5F5F5;
 	padding-bottom: 22px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .anjiankuang{
 	width: 72px;
 	height: 24px;
-	background: red;
 	float: right;
 	margin-top: 19px;
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: bolder;
 }
 .anjiankuang-zuo{
 	width: 34px;
@@ -943,11 +1008,7 @@
 	border: 1px solid #e0e0e0;
 	float: right;
 	text-align: center;
-	color: #B0B0B0;
-	cursor:pointer;
-}
-.anjiankuang-you:hover{
-	color: #FF6700;
+	color: #E0E0E1;
 }
 .anjiankuang .anjiangkuang-zuo{
 	border-left: 0px;
@@ -1031,208 +1092,13 @@
 	width: 296px;
 	height: 221px;
 }
-.wenzi-list{
+.wenzi-list {
 	width: 296px;
 	height: 195px;
 	background: #fff;
-}
-.wenzi-diyihang{
-	width: 238px;
-	height: 61px;
-	margin-top: 33px;
-	text-align: left;
-	margin-left: 29px;
-	font-size: 12px;
-	color: #333333;
-}
-.wenzi-dierhang{
-	width: 102px;
-	height: 12px;
-	font-size: 12px;
-	color: #b0b0b0;
-	margin-left: 29px;
-	margin-top: 31px;
-}
-.wenzi-disanhang{
-	width: 186px;
-	height: 12px;
-	background: #fff;
-	margin-top: 16px;
-	margin-left: 29px;
-}
-.wenzi-sanleft{
-	font-size: 13px;
-	color: #333333;
-	border-right: 1px solid #e0e0e0;
-	padding-right: 10px;
-	float: left;
-}
-.wenzi-sanright{
-	float: left;
-	font-size: 12px;
-	color: #ff6700;
-	padding-left: 10px;
 }
 .reping-dakuang-list .reping-text:last-child{
 	margin-right: 0px;
-}
-/* 内容部分 */
-.neirong-dakuang{
-	width: 100%;
-	height: 492px;
-	background: #F5F5F5;
-	margin: 0 auto;
-}
-.neirong{
-	width: 1226px;
-	height: 58px;
-	background: #f5f5f5;
-	margin: 0 auto;
-}
-.neirongtext{
-	font-size: 22px;
-	line-height: 58px;
-	color: #333333;
-}
-.neirong-dakuang-list{
-	width: 1226px;
-	height: 416px;
-	background: #f5f5f5;
-	margin: 0 auto;
-}
-.neirong-text{
-	width: 296px;
-	height: 419px;
-	background: #fff;
-	margin-right: 14px;
-	float: left;
-}
-.neirong-text:hover{
-	box-shadow: 4px 0px 999px 4px rgba(0, 0, 0, 0.1);
-	transform: translateY(-4px);
-	transition: all 0.5s;
-}
-.neirong-dakuang-list .neirong-text:first-child{
-	border-top: 1px solid #FFAC13;
-}
-.neirong-dakuang-list .neirong-text:nth-child(2){
-	border-top: 1px solid #83C44E;
-}
-.neirong-dakuang-list .neirong-text:last-child{
-	border-top: 1px solid #2196F3;
-}
-.neirong-dakuang-list .neirong-text:nth-child(3){
-	border-top: 1px solid #E53935;
-}
-.tushu{
-	font-size: 15px;
-	color: #FFBE13;
-	text-align: center;
-	margin-top: 50px;
-}
-.tushu1{
-	color: #88C882;
-}
-.tushu2{
-	color: #E94B56;
-}
-.tushu3{
-	color: #23A3F6;
-}
-.beizuzoudehaizi{
-	font-size: 19px;
-	color: #333333;
-	text-align: center;
-	margin-top: 25px;
-	/* padding-bottom: 11px; */
-}
-.dibagegushi{
-	font-size: 11px;
-	color: #B0B0B0;
-	text-align: center;
-	margin-top: 12px;
-}
-.gushi{
-	font-size: 11px;
-	color: #B0B0B0;
-	text-align: center;
-	margin-top: 9px;
-}
-.jiaqian{
-	font-size: 10px;
-	color: #4B4540;
-	text-align: center;
-	margin-top: 20px;
-}
-.neirong-picture{
-	width: 216px;
-	height: 154px;
-	margin: 0 auto;
-	display: block;
-	margin-top: 5px;
-}
-.neirong-picture img{
-	width: 216px;
-	height: 154px;
-}
-.page-btn{
-	width: 296px;
-	height: 30px;
-	margin-top: 10px;
-}
-.page-btn ul{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-}
-.page-btn ul li{
-	width: 10px;
-	height: 10px;
-	margin: 0 2px;
-	padding: 10px;
-	display: inline-block;
-}
- .dot{
-	width: 6px;
-	height: 6px;
-	border: 2px solid #ff6700;
-    background: red;
-	border-radius: 6px;
-	display: block;
-	background: #fff;
-}
-.page{
-	width: 6px;
-	height: 6px;
-	border: 2px solid #fff;
-    background: red;
-	border-radius: 6px;
-	display: block;
-	background:#B0B0B0;
-}
-.page-btn ul li:nth-child(2){
-	cursor: pointer;
-}
-.page-btn ul li:nth-child(3){
-	cursor: pointer;
-}
-.page-btn ul li:nth-child(4){
-	cursor: pointer;
-}
-.page-btn ul li:nth-child(2):hover .page{
-	background: #ff6700;
-}
-.page-btn ul li:nth-child(3):hover .page{
-	background: #ff6700;
-}
-.page-btn ul li:nth-child(4):hover .page{
-	background: #ff6700;
-}
-.wenzi-list{
-	width: 296px;
-	height: 195px;
-	background: #fff;
 }
 .wenzi-diyihang{
 	width: 238px;
@@ -1271,9 +1137,182 @@
 	color: #ff6700;
 	padding-left: 10px;
 }
-.neirong-dakuang-list .neirong-text:last-child{
-	margin-right: 0px;
+/* 内容部分 */
+.neirong-box{
+	width: 100%;
+	height: auto;
+	background: #F5F5F5;
+	padding-bottom: 20px;
+	margin: 0 auto;
 }
+.neiron{
+	width: 1226px;
+	height: 60px;
+	margin: 0 auto;
+}
+.neiron span{
+	font-size: 22px;
+	color: #333;
+	float: left;
+	line-height: 60px;
+}
+.neiron-tu{
+	width:1226px;
+	height: 420px;
+	margin: 0 auto;
+}
+.neiron-left{
+	width:296px;
+	height: 420px;
+	background-color: #fff;
+	float: left;
+	border-top: 1px solid #ffac13;
+	position: relative;
+	transition: all .6s ease;
+	margin-left: 14px;
+}
+.neiron-left:nth-child(2){
+	 border-top: 1px solid #83c44e;
+ }
+.neiron-left:nth-child(3){
+	border-top: 1px solid #e53935;
+}
+.neiron-left:nth-child(4){
+	border-top: 1px solid #2196f3;
+}
+.neiron-right{
+	margin-left: 0px;
+}
+.tushu{
+	width: 296px;
+	height: 300px;
+	overflow: hidden;
+}
+.tusu{
+	width: 300%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 300;
+}
+.shum{
+	width: 296px;
+	overflow: hidden;
+	float: left;
+}
+.neiron-zi{
+	font-size: 14px;
+	color: #FF6700;
+	display: block;
+	text-align: center;
+	margin-top: 51px;
+}
+.neiron-zi1 a{
+	font-size: 20px;
+	color: #333;
+	display: block;
+	text-align: center;
+	margin-top: 25px;
+}
+.neiron-zi2 a{
+	font-size: 12px;
+	color: #bfbfbf;
+	display: block;
+	text-align: center;
+	/* margin-top: 15px; */
+	margin: 10px 52px 0px;
+}
+.neiron-zi3{
+	font-size: 12px;
+	color: #333;
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+}
+.neiron-left-1{
+	width: 200px;
+	height: 154px;
+	margin: 10px auto 0;
+}
+.neiron-left-2{
+	width: 200px;
+	height: 154px;
+	margin: 50px auto 0;
+}
+.neiron-dian{
+	width: 100px;
+	height: 12px;
+	/* background-color: black; */
+	position: absolute;
+	left: 25px;
+	right: 0px;
+	margin: auto;
+	bottom: 20px;
+}
+
+.neiron-dian2{
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #ccc;
+	float: left;
+	margin-top: 3px;
+	margin-right: 24px;
+	cursor: pointer;
+}
+.neiron-dian1{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: 2px solid #FF6700;
+	background-color: #fff;
+	margin-top: 0px;
+}
+.neiron-dian2:hover{
+	background-color: #FF6700;
+}
+.neiron-jiantou{
+	width:20px;
+	height: 48px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	left: 0px;
+	opacity: 0;
+	z-index: 320;
+}
+.neiron-jiantou1{
+	width:20px;
+	height: 48px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+	right:0px;
+	opacity: 0;
+	z-index: 320;
+}
+.neiron-left:hover .neiron-jiantou1{
+	opacity: 0.5;
+}
+.neiron-left:hover .neiron-jiantou{
+	opacity: 0.5;
+}
+.neiron-left:hover{
+	box-shadow: 0 10px 20px #CCC;
+	transform: translateY(-5px);
+}
+/* .jiantou-A3{
+	opacity: 0.6;
+} */
+.neiron-left .neiron-jiantou1:hover{
+	opacity: 1;
+}
+.neiron-left .neiron-jiantou:hover{
+	opacity: 1;
+}
+
 /* 内容结束 */
 
 /* 视频开始 */
