@@ -1,6 +1,21 @@
 /**
  * Created by Administrator on 2017/12/27/027.
  */
+// 购物车
+{
+    let shop=document.querySelector(".shop");
+    let shops=document.querySelector(".shop .active01");
+
+    shop.onmousemove=function(){
+        animate(shops,{height:100},100);
+        shops.style.boxShadow="0 2px 10px rgba(0,0,0,0.15)";
+    }
+    shop.onmouseout=function(){
+        animate(shops,{height:0},100);
+    }
+}
+
+
 //  轮播图
 {
     // 轮播点点击换图
@@ -71,6 +86,8 @@
         });
     })
 }
+
+
 // 明星单品
 {
     let left=document.querySelector(".danping-top-right-zuo");
@@ -246,5 +263,25 @@
     let neiron=document.querySelectorAll('.neiron-tu .neiron-left')
     neiron.forEach(function(value,index){
         lun(value);
+    })
+}
+
+//  头部选项卡
+{
+    let title=document.querySelectorAll(".daohang-text");
+    let content=document.querySelectorAll(".search-box");
+    //console.log(title,content);
+    title.forEach(function(ele,index){
+        ele.onmouseover=function(){
+            for(let i=0;i<title.length;i++){
+                content[i].classList.remove("active");
+            }
+            content[index].classList.add("active");
+        }
+        ele.onmouseout=function(){
+            for(let i=0;i<title.length;i++){
+                content[i].classList.remove("active");
+            }
+        }
     })
 }

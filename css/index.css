@@ -67,6 +67,7 @@
 	background: #424242;
 	float: right;
 	cursor: pointer;
+	position: relative;
 }
 .shop-photo{
 	width: 20px;
@@ -93,9 +94,107 @@
 .shop:hover .car{
 	color: #ff6700;
 }
+.active01{
+	width: 300px;
+	position: absolute;
+	right: 0;
+	top:100%;
+	background: #fff;
+	color: #333;
+	font-size: 18px;
+	line-height: 100px;
+	text-align: center;
+	height: 0;
+	z-index: 100;
+	overflow: hidden;
+	transition: all .1s;
+}
 /* 登录栏结束 */
-
-
+/*导航选项卡*/
+.search{
+	width: 100%;
+	height: 230px;
+	border-top: 1px solid #e0e0e0;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+	transition: box-shadow .2s;
+	display: none;
+}
+.active{
+	display: block;
+}
+.search-box{
+	width: 1226px;
+	height: 100%;
+	margin: 0 auto;
+}
+.search-box ul li{
+	position: relative;
+	float: left;
+	width: 180px;
+	height: 201px;
+	padding: 35px 12px 0;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+}
+.search-box ul li:nth-child(1):before{
+	content: "";
+	width: 0;
+	height: 0;
+}
+.search-box ul li:before{
+	position: absolute;
+	left: 0;
+	top: 35px;
+	z-index: 1;
+	width: 1px;
+	height: 100px;
+	content: "";
+	background-color:#e0e0e0 ;
+}
+.figure-thumb{
+	width: 160px;
+	height: 110px;
+	margin: 0 auto 16px;
+	text-align: center;
+}
+.figure-thumb a{
+	display: block;
+}
+.figure-thumb a img{
+	display: block;
+	width: 160px;
+	height: 110px;
+}
+.title a{
+	color: #757575;
+	font-size: 12px;
+	margin-top: 12px;
+}
+.figure-thumb p{
+	color:  #ff6700;
+	font-size: 12px;
+	line-height: 20px;
+}
+.flag{
+	display: inline-block;
+	height: 18px;
+	padding: 1px 20px;
+	border: 1px solid #ff6700;
+	color: #ff6700;
+	font-size: 12px;
+	line-height: 18px;
+	text-align: center;
+}
+.flags{
+	position: absolute;
+	top: -1px;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	font-size: 12px;
+	text-align: center;
+}
 /* 导航栏开始 */
 /* 导航内宽设置 */
 .daohang{
@@ -145,17 +244,20 @@
 	height: 48px;
 	border: 1px solid #eeeeee;
 	float: left;
+	position: relative;
 }
 .xiaomiwenzi{
 	width: 53px;
 	height: 18px;
 	background: #eeeeee;
-	margin-left: 93px;
-	margin-top: 15px;
 	font-size: 11px;
 	text-align: center;
 	color: #757575;
 	float: left;
+	position: absolute;
+	left: 93px;
+	top: 15px;
+	margin: auto;
 }
 .xiaomiwenzi:hover{
 	color: #fff;
@@ -171,8 +273,10 @@
 	text-align: center;
 	color: #757575;
 	float: right;
-	margin-right: 10px;
-	margin-top: 15px;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	margin: auto;
 }
 .rengong:hover{
 	background: #FF6700;
@@ -205,7 +309,6 @@
 /* 导航结束 */
 
 /* banner开始 */
-/* banner 开始 */
 
 .banner{
 	width: 1226px;
@@ -1414,7 +1517,6 @@
 .shiping-list-top{
 	width: 296px;
 	height: 180px;
-	background: red;
 	/* margin-right: 14px */
 	margin: 0 auto;
 }
@@ -1422,7 +1524,6 @@
 	width: 296px;
 	height: 180px;
 	position: relative;
-	background: red;
 	cursor: pointer;
 }
 .shiping-tupian img{
