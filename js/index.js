@@ -272,16 +272,15 @@
     let content=document.querySelectorAll(".search-box");
     //console.log(title,content);
     title.forEach(function(ele,index){
-        ele.onmouseover=function(){
+        ele.onmouseover=function(e){
+            e.stopPropagation();
             for(let i=0;i<title.length;i++){
-                content[i].classList.remove("active");
+                content[index].classList.add("active");
             }
-            content[index].classList.add("active");
-        }
+        };
         ele.onmouseout=function(){
-            for(let i=0;i<title.length;i++){
-                content[i].classList.remove("active");
-            }
+           content[index].classList.remove("active");
         }
     })
 }
+

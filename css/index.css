@@ -111,31 +111,31 @@
 }
 /* 登录栏结束 */
 /*导航选项卡*/
-.search{
+.search-box{
 	width: 100%;
 	height: 230px;
+	position: absolute;
+	top:100px;
+	left:0;
+	z-index: 9999;
 	border-top: 1px solid #e0e0e0;
 	box-shadow: 0 3px 4px rgba(0,0,0,0.18);
 	transition: box-shadow .2s;
+	background: #fff;
 	display: none;
 }
-.active{
+.search .active{
 	display: block;
 }
-.search-box{
-	width: 1226px;
-	height: 100%;
-	margin: 0 auto;
+.search-box ul{
+	margin-left: 55px;
 }
 .search-box ul li{
 	position: relative;
 	float: left;
 	width: 180px;
-	height: 201px;
 	padding: 35px 12px 0;
 	text-align: center;
-	font-size: 12px;
-	cursor: pointer;
 }
 .search-box ul li:nth-child(1):before{
 	content: "";
@@ -166,45 +166,50 @@
 	width: 160px;
 	height: 110px;
 }
-.title a{
-	color: #757575;
+.figure-thumb .title{
+	margin: 0;
+	line-height: 20px;
+	color: #333;
+}
+.figure-thumb .title a{
+	color: #333;
 	font-size: 12px;
 	margin-top: 12px;
 }
 .figure-thumb p{
-	color:  #ff6700;
-	font-size: 12px;
+	margin: 0;
 	line-height: 20px;
-}
-.flag{
-	display: inline-block;
-	height: 18px;
-	padding: 1px 20px;
-	border: 1px solid #ff6700;
 	color: #ff6700;
 	font-size: 12px;
-	line-height: 18px;
-	text-align: center;
 }
 .flags{
-	position: absolute;
-	top: -1px;
-	left: 0;
-	z-index: 1;
-	width: 100%;
+	width: 66px;
 	font-size: 12px;
 	text-align: center;
+	height: 22px;
+	display: inline-block;
+	/*padding: 1px 20px;*/
+	border: 1px solid #ff6700;
+	color: #ff6700;
+	line-height: 18px;
+	position: absolute;
+	top: -1px;
+	left: 35%;
+	z-index: 1;
 }
 /* 导航栏开始 */
 /* 导航内宽设置 */
+.dh-box{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
 .daohang{
 	width: 1226px;
 	height: 100px;
 	background: #fff;
 	margin: 0 auto;
 }
-
-
 .daohang-left{
 	width: 55px;
 	height: 55px;
